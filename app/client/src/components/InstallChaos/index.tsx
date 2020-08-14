@@ -18,10 +18,11 @@ export function InstallChaos(props: InstallProps) {
 	const [copying, setCopying] = useState(false);
 	const [viewing, setViewing] = useState(false);
 	const [editing, setEditing] = useState(false);
-	const [yaml, setYaml] = useState(`kubectl apply -f ${yamlLink}`);
 	const [yamlText, setYamlText] = useState(``);
 	const [open, setOpen] = useState(false);
 	const [reload, setReload] = useState(false);
+
+	const yaml = `kubectl apply -f ${yamlLink}`;
 
 	const handleClose = () => {
 		setOpen(false);
