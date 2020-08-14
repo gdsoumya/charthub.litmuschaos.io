@@ -122,15 +122,7 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 		element.href = URL.createObjectURL(file);
 		let filenameArray = filename.split("/");
 		let downloadFilename =
-			filenameArray[2] +
-			"-" +
-			filenameArray[5].split("?")[0] +
-			"-" +
-			filenameArray[6] +
-			"-" +
-			filenameArray[7] +
-			"-" +
-			filenameArray[8];
+			filenameArray[6] + "-" + filenameArray[7] + "-" + filenameArray[8];
 		element.download = downloadFilename;
 		document.body.appendChild(element);
 		element.click();
