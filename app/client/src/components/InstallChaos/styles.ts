@@ -89,10 +89,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
 
 	modalContainer: {
 		width: "75%",
-		height: "50%",
+		height: "60vh",
 		margin: "0 auto",
-		marginTop: "3.5vh",
-		marginBottom: "5.5%",
+		marginTop: "4vh",
+		marginBottom: "4vh",
 		background: "#1C1C1C",
 		outline: "none",
 		[theme.breakpoints.down("xs")]: {
@@ -103,16 +103,22 @@ export const useStyles = makeStyles((theme: Theme) => ({
 			marginTop: "20%",
 		},
 		[theme.breakpoints.down("xl")]: {
-			marginTop: "3.5vh",
+			marginTop: "9vh",
+			marginBottom: "9vh",
 			height: "75vh",
+			width: "65%",
 		},
 		[theme.breakpoints.down("lg")]: {
-			marginTop: "3.5vh",
-			height: "75vh",
+			marginTop: "6vh",
+			marginBottom: "6vh",
+			height: "60vh",
+			width: "70%",
 		},
 		[theme.breakpoints.down("md")]: {
 			marginTop: "3.5vh",
-			height: "75vh",
+			marginBottom: "3.5vh",
+			height: "55vh",
+			width: "75%",
 		},
 	},
 

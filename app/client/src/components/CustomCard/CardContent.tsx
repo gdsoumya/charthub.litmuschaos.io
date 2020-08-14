@@ -1,10 +1,13 @@
-import { IconButton, Tooltip, Link } from "@material-ui/core";
+import { IconButton, Link } from "@material-ui/core";
 import React from "react";
 import { formatCount } from "../../utils";
 import { CardProps } from "./model";
-import { useStyles } from "./styles";
+import { InfoTooltip, useStyles } from "./styles";
 import InfoIcon from "@material-ui/icons/Info";
 import clsx from "clsx";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/reducers";
+import { ExperimentGroup } from "../../redux/model/charts";
 
 function CardContent(props: CardProps) {
 	const {
@@ -13,7 +16,6 @@ function CardContent(props: CardProps) {
 		urlToIcon,
 		handleClick,
 		handleExpGrpClick,
-		experimentCount,
 		description,
 		totalRuns,
 		chaosType,
@@ -22,15 +24,32 @@ function CardContent(props: CardProps) {
 
 	const classes = useStyles();
 
+	const { chartData } = useSelector((state: RootState) => state);
+
+	const findCount = (name: string) => {
+		const matched: ExperimentGroup[] = chartData.allExperimentGroups.filter(
+			(expGrp: ExperimentGroup) => {
+				return expGrp.metadataName === name;
+			}
+		);
+		return matched[0].experiments.length;
+	};
+
 	return (
 		<div className={classes.cardContent} onClick={handleClick}>
 			<div className={classes.cardAnalytics}>
-				{experimentCount ? (
-					<span className={classes.expCount}>
-						{experimentCount} Experiments
+				{title === "all-experiments" ? (
+					<span
+						className={clsx(
+							classes.allExptotalCount,
+							classes.maintotalCount
+						)}
+					>
+						{findCount(expGrp)}{" "}
+						{findCount(expGrp) >= 2 ? "experiments" : "experiment"}
 					</span>
 				) : chaosType ? (
-					<Tooltip
+					<InfoTooltip
 						TransitionProps={{ timeout: 400 }}
 						title={
 							chartType === "generic"
@@ -39,10 +58,18 @@ function CardContent(props: CardProps) {
 						}
 						placement="bottom-start"
 					>
-						<IconButton className={classes.button}>
-							<InfoIcon className={classes.infoIcon} />
-						</IconButton>
-					</Tooltip>
+						<span
+							className={clsx(
+								classes.chaosInfo,
+								classes.chaosInfoBase
+							)}
+						>
+							<IconButton className={classes.button}>
+								<InfoIcon className={classes.infoIcon} />
+							</IconButton>
+							&nbsp;Infra-chaos
+						</span>
+					</InfoTooltip>
 				) : (
 					<span />
 				)}
@@ -104,7 +131,15 @@ function CardContent(props: CardProps) {
 						>
 							{expGrp}/
 						</Link>
-						{title}
+						<div
+							className={clsx(
+								props.title !== "all-experiments"
+									? classes.expName
+									: classes.allExpName
+							)}
+						>
+							{title}
+						</div>
 					</div>
 				</div>
 				{description ? (

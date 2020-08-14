@@ -436,7 +436,7 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 							width="100%"
 							height="100%"
 							maxLines={12000}
-							minLines={29}
+							minLines={1}
 							highlightActiveLine={false}
 							readOnly={false}
 							tabSize={2}

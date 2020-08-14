@@ -197,6 +197,8 @@ export function InstallChaos(props: InstallProps) {
 								style={{
 									background: "rgba(33, 21, 86, 0.65)",
 									backdropFilter: "blur(10px)",
+									alignItems: "center",
+									justifyContent: "center",
 								}}
 							>
 								<div className={classes.modalContainer}>

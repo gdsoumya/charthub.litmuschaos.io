@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 	editorGrid: {
 		overflow: "auto",
-		height: "65vh",
+		height: "50vh",
 		width: "100%",
 		"&::-webkit-scrollbar": {
 			width: "0.2em",
@@ -64,13 +64,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 			outline: "1px solid slategrey",
 		},
 		[theme.breakpoints.down("xl")]: {
-			height: "65vh", //"1500px",
+			height: "55vh",
 		},
 		[theme.breakpoints.down("lg")]: {
-			height: "65vh",
+			height: "50vh",
 		},
 		[theme.breakpoints.down("md")]: {
-			height: "65vh",
+			height: "45vh",
 		},
 
 		[theme.breakpoints.down("sm")]: {
