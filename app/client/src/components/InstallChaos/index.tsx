@@ -40,7 +40,7 @@ export function InstallChaos(props: InstallProps) {
 			});
 	}
 
-	function showYamlInPage(text: string) {
+	function showYamlInPage() {
 		if (!viewing) {
 			fetchYamlAndShowInPage(yamlLink);
 			setViewing(true);
@@ -76,7 +76,7 @@ export function InstallChaos(props: InstallProps) {
 		setTimeout(() => setCopying(false), 3000);
 	}
 
-	function startEditing(text: string) {
+	function startEditing() {
 		setYaml(`kubectl apply -f ${yamlLink}`);
 		setViewing(false);
 		setEditing(true);
@@ -141,7 +141,7 @@ export function InstallChaos(props: InstallProps) {
 					<Hidden mdUp>
 						<Button
 							variant="outlined"
-							onClick={() => showYamlInPage(yaml)}
+							onClick={() => showYamlInPage()}
 							className={classes.displayYamlBtn}
 						>
 							{!viewing ? (
@@ -171,7 +171,7 @@ export function InstallChaos(props: InstallProps) {
 					<Hidden smDown>
 						<Button
 							variant="outlined"
-							onClick={() => startEditing(yaml)}
+							onClick={() => startEditing()}
 							className={classes.displayYamlBtn}
 						>
 							<div
