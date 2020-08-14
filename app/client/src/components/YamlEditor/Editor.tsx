@@ -116,7 +116,7 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 
 	const downloadYamlFile = () => {
 		const element = document.createElement("a");
-		const file = new Blob([editorState.content as any], {
+		const file = new Blob([modifiedYaml as any], {
 			type: "text/yaml",
 		});
 		element.href = URL.createObjectURL(file);
@@ -271,164 +271,164 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 					? "Your code is fine. You can move on!"
 					: "Correct this error and keep moving forward!"}
 			</Typography>
+			<div className={classes.widthManager}>
+				<Divider
+					variant="middle"
+					classes={{ root: classes.horizontalLineWhite }}
+				/>
 
-			<Divider
-				variant="middle"
-				classes={{ root: classes.horizontalLineWhite }}
-			/>
+				<div className={classes.editorButtonGrid}>
+					<Tooltip
+						title="Undo"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonUndo}
+							onClick={startundo}
+							startIcon={<UndoTwoToneIcon />}
+						/>
+					</Tooltip>
 
-			<div className={classes.editorButtonGrid}>
-				<Tooltip
-					title="Undo"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonUndo}
-						onClick={startundo}
-						startIcon={<UndoTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Redo"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtons}
+							onClick={startredo}
+							startIcon={<RedoTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Redo"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtons}
-						onClick={startredo}
-						startIcon={<RedoTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Download"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonDownload}
+							onClick={downloadYamlFile}
+							startIcon={<GetAppTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Download"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonDownload}
-						onClick={downloadYamlFile}
-						startIcon={<GetAppTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Copy"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtons}
+							onClick={copycontent}
+							startIcon={<FileCopyTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Copy"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtons}
-						onClick={copycontent}
-						startIcon={<FileCopyTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Goto Error"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtons}
+							onClick={startgotonexterror}
+							startIcon={<ErrorTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Goto Error"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtons}
-						onClick={startgotonexterror}
-						startIcon={<ErrorTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Find"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonFind}
+							onClick={startfinder}
+							startIcon={<FindInPageTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Find"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonFind}
-						onClick={startfinder}
-						startIcon={<FindInPageTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Replace"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonReplace}
+							onClick={startreplace}
+							startIcon={<FindReplaceTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Replace"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonReplace}
-						onClick={startreplace}
-						startIcon={<FindReplaceTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Unfold All"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonFoldAndUnfold}
+							onClick={startunfoldall}
+							startIcon={<UnfoldMoreTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Unfold All"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonFoldAndUnfold}
-						onClick={startunfoldall}
-						startIcon={<UnfoldMoreTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Fold All"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonFoldAndUnfold}
+							onClick={startfoldall}
+							startIcon={<UnfoldLessTwoToneIcon />}
+						/>
+					</Tooltip>
 
-				<Tooltip
-					title="Fold All"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonFoldAndUnfold}
-						onClick={startfoldall}
-						startIcon={<UnfoldLessTwoToneIcon />}
-					/>
-				</Tooltip>
-
-				<Tooltip
-					title="Select"
-					placement="bottom"
-					TransitionComponent={Fade}
-					TransitionProps={{ timeout: 500 }}
-					arrow
-				>
-					<Button
-						variant="outlined"
-						className={classes.editorButtonSelectAll}
-						onClick={startselectall}
-						startIcon={<SelectAllTwoToneIcon />}
-					/>
-				</Tooltip>
+					<Tooltip
+						title="Select"
+						placement="bottom"
+						TransitionComponent={Fade}
+						TransitionProps={{ timeout: 500 }}
+						arrow
+					>
+						<Button
+							variant="outlined"
+							className={classes.editorButtonSelectAll}
+							onClick={startselectall}
+							startIcon={<SelectAllTwoToneIcon />}
+						/>
+					</Tooltip>
+				</div>
 			</div>
-
 			<div className={classes.fullWidth}>
 				<Box display="flex" p={1} className={classes.editorContainer}>
 					<Box
@@ -519,7 +519,7 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 							markers={editorState.markers}
 						/>
 					</Box>
-					<Box p={1} className={classes.fullScreenGrid}>
+					<Box p={1} flexGrow={0} className={classes.fullScreenGrid}>
 						<Tooltip
 							title="Full Screen (Press Escape to End)"
 							placement="bottom"
