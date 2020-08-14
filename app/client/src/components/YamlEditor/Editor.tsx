@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Typography, Button, Box } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";

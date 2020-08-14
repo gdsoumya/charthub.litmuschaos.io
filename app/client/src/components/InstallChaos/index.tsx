@@ -184,6 +184,7 @@ export function InstallChaos(props: InstallProps) {
 								<img
 									src="/icons/edit.svg"
 									style={{ paddingRight: 10 }}
+									alt="Edit"
 								/>
 								<Typography>Edit</Typography>
 							</div>
