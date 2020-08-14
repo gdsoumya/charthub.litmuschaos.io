@@ -509,11 +509,17 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 										"rgba(255, 255, 255, 0.4)";
 								}
 
-								let nodeStyleActive = (document.getElementsByClassName(
-									"ace_gutter-cell"
-								)[selection.cursor.row] as any).style;
-								nodeStyleActive.backgroundColor = "#5B44BA";
-								nodeStyleActive.color = "#FFFFFF";
+								if (
+									document.getElementsByClassName(
+										"ace_gutter-cell"
+									)[selection.cursor.row] as any
+								) {
+									let nodeStyleActive = (document.getElementsByClassName(
+										"ace_gutter-cell"
+									)[selection.cursor.row] as any).style;
+									nodeStyleActive.backgroundColor = "#5B44BA";
+									nodeStyleActive.color = "#FFFFFF";
+								}
 							}}
 							annotations={editorState.annotations}
 							markers={editorState.markers}
