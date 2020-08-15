@@ -5,9 +5,6 @@ import { CardProps } from "./model";
 import { InfoTooltip, useStyles } from "./styles";
 import InfoIcon from "@material-ui/icons/Info";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/reducers";
-import { ExperimentGroup } from "../../redux/model/charts";
 
 function CardContent(props: CardProps) {
 	const {
@@ -24,31 +21,10 @@ function CardContent(props: CardProps) {
 
 	const classes = useStyles();
 
-	const { chartData } = useSelector((state: RootState) => state);
-
-	const findCount = (name: string) => {
-		const matched: ExperimentGroup[] = chartData.allExperimentGroups.filter(
-			(expGrp: ExperimentGroup) => {
-				return expGrp.metadataName === name;
-			}
-		);
-		return matched[0].experiments.length;
-	};
-
 	return (
 		<div className={classes.cardContent} onClick={handleClick}>
 			<div className={classes.cardAnalytics}>
-				{title === "all-experiments" ? (
-					<span
-						className={clsx(
-							classes.allExptotalCount,
-							classes.maintotalCount
-						)}
-					>
-						{findCount(expGrp)}{" "}
-						{findCount(expGrp) >= 2 ? "experiments" : "experiment"}
-					</span>
-				) : chaosType ? (
+				{chaosType ? (
 					<InfoTooltip
 						TransitionProps={{ timeout: 400 }}
 						title={
