@@ -6,6 +6,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		height: "100%",
 		zIndex: 1,
 		overflow: "auto",
+		scrollbarColor: "#5B44BA #000000",
+		scrollbarWidth: "thin",
 		"&::-webkit-scrollbar": {
 			width: "0.5em",
 		},
