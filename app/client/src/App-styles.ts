@@ -6,6 +6,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
 		height: "100%",
 		zIndex: 1,
 		overflow: "auto",
+		scrollbarColor: "#5B44BA #000000",
+		scrollbarWidth: "thin",
 		"&::-webkit-scrollbar": {
 			width: "0.5em",
 		},
@@ -14,6 +16,42 @@ export const useStyles = makeStyles((theme: Theme) => ({
 			borderRadius: "0.5em",
 		},
 		"&::-webkit-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+			borderRadius: "0.5em",
+		},
+		"&::-moz-scrollbar": {
+			width: "0.5em",
+		},
+		"&::-moz-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+			borderRadius: "0.5em",
+		},
+		"&::-moz-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+			borderRadius: "0.5em",
+		},
+		"&::-o-scrollbar": {
+			width: "0.5em",
+		},
+		"&::-o-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+			borderRadius: "0.5em",
+		},
+		"&::-o-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+			borderRadius: "0.5em",
+		},
+		"&::-ms-scrollbar": {
+			width: "0.5em",
+		},
+		"&::-ms-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+			borderRadius: "0.5em",
+		},
+		"&::-ms-scrollbar-thumb": {
 			backgroundColor: theme.palette.text.primary,
 			outline: "1px solid slategrey",
 			borderRadius: "0.5em",

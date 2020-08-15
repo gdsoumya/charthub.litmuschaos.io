@@ -53,6 +53,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 		overflow: "auto",
 		height: "50vh",
 		width: "100%",
+		scrollbarColor: "#5B44BA #000000",
+		scrollbarWidth: "thin",
 		"&::-webkit-scrollbar": {
 			width: "0.2em",
 		},
@@ -63,6 +65,38 @@ const useStyles = makeStyles((theme: Theme) => ({
 			backgroundColor: theme.palette.text.primary,
 			outline: "1px solid slategrey",
 		},
+		"&::-moz-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-moz-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-moz-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
+		"&::-o-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-o-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-o-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
+		"&::-ms-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-ms-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-ms-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
+		"&::-scrollbar-color": "#5B44BA #000000",
+		"&::-scrollbar-width": "thin",
 		[theme.breakpoints.down("xl")]: {
 			height: "55vh",
 		},
