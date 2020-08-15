@@ -63,6 +63,36 @@ const useStyles = makeStyles((theme: Theme) => ({
 			backgroundColor: theme.palette.text.primary,
 			outline: "1px solid slategrey",
 		},
+		"&::-moz-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-moz-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-moz-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
+		"&::-o-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-o-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-o-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
+		"&::-ms-scrollbar": {
+			width: "0.2em",
+		},
+		"&::-ms-scrollbar-track": {
+			webkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.00)",
+		},
+		"&::-ms-scrollbar-thumb": {
+			backgroundColor: theme.palette.text.primary,
+			outline: "1px solid slategrey",
+		},
 		[theme.breakpoints.down("xl")]: {
 			height: "55vh",
 		},
