@@ -11,8 +11,7 @@ export const useStyles = makeStyles((theme) => ({
 		},
 	},
 	allExpCard: {
-		backgroundImage:
-			"linear-gradient(82.18deg, #5B44BA -6.24%, #858CDD 142.26%)",
+		backgroundColor: "#5B44BA",
 		border: "2px solid #858CDD",
 		"&:hover": {
 			border: "2px solid #FFFFFF",
@@ -86,9 +85,6 @@ export const useStyles = makeStyles((theme) => ({
 	totalRuns: {
 		backgroundColor: theme.palette.secondary.light,
 		color: theme.palette.common.white,
-		"&:hover": {
-			backgroundColor: "#5B44BA",
-		},
 	},
 	allExptotalRuns: {
 		backgroundColor: theme.palette.common.white,
@@ -187,7 +183,7 @@ export const useStyles = makeStyles((theme) => ({
 
 	expName: {},
 
-	allExpName: { color: "#858CDD" },
+	allExpName: { color: theme.palette.common.white },
 }));
 
 export const InfoTooltip = withStyles({
