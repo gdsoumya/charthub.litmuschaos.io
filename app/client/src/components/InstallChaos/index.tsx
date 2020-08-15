@@ -128,6 +128,7 @@ export function InstallChaos(props: InstallProps) {
 								<img
 									src="/icons/copy.svg"
 									style={{ paddingRight: 10 }}
+									alt="copy"
 								/>
 								<Typography>Copy</Typography>
 							</div>
@@ -183,6 +184,7 @@ export function InstallChaos(props: InstallProps) {
 								<img
 									src="/icons/edit.svg"
 									style={{ paddingRight: 10 }}
+									alt="Edit"
 								/>
 								<Typography>Edit</Typography>
 							</div>
@@ -196,6 +198,8 @@ export function InstallChaos(props: InstallProps) {
 								style={{
 									background: "rgba(33, 21, 86, 0.65)",
 									backdropFilter: "blur(10px)",
+									alignItems: "center",
+									justifyContent: "center",
 								}}
 							>
 								<div className={classes.modalContainer}>

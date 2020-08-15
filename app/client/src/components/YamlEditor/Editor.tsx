@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Typography, Button, Box } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
@@ -436,7 +436,7 @@ const YamlEditor: React.FC<YamlEditorProps> = ({ content, filename }) => {
 							width="100%"
 							height="100%"
 							maxLines={12000}
-							minLines={29}
+							minLines={1}
 							highlightActiveLine={false}
 							readOnly={false}
 							tabSize={2}
