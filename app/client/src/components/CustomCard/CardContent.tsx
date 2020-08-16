@@ -127,6 +127,7 @@ function CardContent(props: CardProps) {
 						>
 							{title}
 						</div>
+						{title.length < 28 ? <br /> : <div />}
 					</div>
 				</div>
 				{description ? (
